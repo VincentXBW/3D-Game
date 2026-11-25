@@ -1,0 +1,2 @@
+assets/models/tree2.glb 5.0 0.0 -5.0 1.0
+assets/models/tree1.glb -5.0 0.0 5.0 1.0
