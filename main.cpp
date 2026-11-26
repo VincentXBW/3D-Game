@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 #include "raylib.h"
+=======
+#include <raylib.h>
+>>>>>>> efb64f47bc55f076795a12ab0dba7cfd57571fbd
 #include "raymath.h"
 #include <vector>
 #include <fstream>
 #include <sstream>
 #include <string>
+<<<<<<< HEAD
 #include "rlgl.h"
+=======
+#include <rlgl.h>
+>>>>>>> efb64f47bc55f076795a12ab0dba7cfd57571fbd
 #include <cmath>
 
 struct WorldObject {
@@ -17,7 +25,11 @@ struct WorldObject {
 int main() {
     Color BABYBLUE = { 137, 207, 240, 255 };
 
+<<<<<<< HEAD
     InitWindow(1920, 1080, "3D_GAME");
+=======
+    InitWindow(1280, 720, "3D_GAME");
+>>>>>>> efb64f47bc55f076795a12ab0dba7cfd57571fbd
 
     Shader alphaShader = LoadShader(0, "alpha.fs");
 
@@ -71,10 +83,13 @@ int main() {
         float moveSpeed = 4.0f;
         float targetHeight = 2.0f;
 
+<<<<<<< HEAD
         if(IsKeyDown(KEY_F)){
             ToggleFullscreen();
         };
 
+=======
+>>>>>>> efb64f47bc55f076795a12ab0dba7cfd57571fbd
         if (IsKeyDown(KEY_LEFT_CONTROL)) {
             moveSpeed = 1.5f;
             targetHeight = 1.1f;
