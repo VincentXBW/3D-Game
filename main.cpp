@@ -15,6 +15,10 @@ struct WorldObject {
     std::string path;
 };
 
+constexpr unsigned char doc_data[] = {
+    #embed "map.txt"
+};
+
 int main() {
     Color BABYBLUE = { 137, 207, 240, 255 };
 
