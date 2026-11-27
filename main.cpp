@@ -17,12 +17,17 @@ struct WorldObject {
 int main() {
     Color BABYBLUE = { 137, 207, 240, 255 };
 
+    SetConfigFlags(FLAG_VSYNC_HINT);
     InitWindow(1920, 1080, "3D_GAME");
+
+    ToggleFullscreen();
 
     Shader alphaShader = LoadShader(0, "alpha.fs");
 
     SetTargetFPS(60);
     DisableCursor();
+
+    int health = 100;
 
     Camera3D camera = { 0 };
     camera.up = (Vector3){ 0.0f, 1.0f, 0.0f };
@@ -135,7 +140,7 @@ int main() {
         playerPos = camera.position;
         camera.target = Vector3Add(camera.position, forward);
 
-        float playerRadius = 0.4f;
+        float playerRadius = 0.2f;
         for (const auto& obj : worldObjects) {
             if (obj.path.find("tree") != std::string::npos) {
                 float treeRadius = 0.8f * obj.scale;
@@ -173,7 +178,10 @@ int main() {
         EndMode3D();
 
         DrawText("3D Game", 10, 10, 20, RAYWHITE);
+        DrawText("Press ESC to exit", 120 , 10, 20, RAYWHITE);
         DrawText(TextFormat("FPS: %d", GetFPS()), 10, 40, 20, RAYWHITE);
+
+        DrawText(TextFormat("Health: %d", health), 10, 740, 20, RAYWHITE);
 
         EndDrawing();
     }
